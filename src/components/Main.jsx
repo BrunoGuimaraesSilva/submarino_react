@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom";
+import logo from "../img/logo.png";
 
 export const Header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-ligth bg-primary">
         <div className="container-fluid">
-          <a
-            className="navbar-brand"
-            href="/home"
-          >
-            Home
-          </a>
+          <Link to="/">
+            <img src={logo}></img>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -25,11 +23,6 @@ export const Header = () => {
             id="menu"
           >
             <ul className="navbar-nav me-auto">
-              <li className="nav-item">
-                <Link to="/" className="nav-link">
-                  Home
-                </Link>
-              </li>
               <li className="nav-item">
                 <Link
                   to="/carrinho"
