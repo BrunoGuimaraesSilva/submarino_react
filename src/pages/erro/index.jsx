@@ -1,4 +1,4 @@
-export const erro = () => {
+export const Erro = () => {
     return (
       <>
         <h1 className="text-center">

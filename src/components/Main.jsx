@@ -24,23 +24,18 @@ export const Header = () => {
             className="collapse navbar-collapse"
             id="menu"
           >
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
+            <ul className="navbar-nav me-auto">
+              <li className="nav-item">
                 <Link to="/" className="nav-link">
                   Home
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
                   to="/carrinho"
                   className="nav-link"
                 >
                   Carrinho
-                </Link>
-              </li>
-              <li class="nav-item">
-                <Link to="/" className="nav-link">
-                  Home
                 </Link>
               </li>
             </ul>
