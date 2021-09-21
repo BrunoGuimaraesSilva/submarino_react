@@ -1,7 +1,24 @@
 import { Link } from "react-router-dom";
 import logo from "../img/logo.png";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const Header = () => {
+
+    const [Categoria, setCategoria] = useState([]);
+
+    useEffect(() => {
+      axios
+        .get(
+          "https://react.professorburnes.com.br/categoria"
+        )
+        .then((Response) => {
+          //console.log(Response.data)
+          setCategoria(Response.data);
+        });
+    }, []);
+
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-ligth bg-primary">
@@ -26,11 +43,23 @@ export const Header = () => {
               <li className="nav-item">
                 <Link
                   to="/carrinho"
-                  className="nav-link"
+                  className="nav-link text-dark"
                 >
                   Carrinho
                 </Link>
               </li>
+              {Categoria.map((item, index) => (
+
+              
+                <li className="nav-item">
+                  <Link
+                    to={"/categoria/" + item.id}
+                    className="nav-link text-dark"
+                  >
+                    {item.categoria}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -44,7 +73,6 @@ export const Footer = () => {
     <>
       <footer className="bg-primary">
         <p>
-          {" "}
           Desenvolvido por Bruno Guimaraes da
           Silva
         </p>
